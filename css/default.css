@@ -1,6 +1,6 @@
 ﻿/* modified from http://www.yinwang.org/main.css */
 body {
-  font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "黑体", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   background-color: white;
   font-size: 100%;
 }
@@ -105,7 +105,7 @@ div.nav {
   width: 700px;
   height: 1.5em;
   line-height: 150%;
-  font-size: 10em;
+  font-size: 1em;
 }
 
 div.nav_rss {
