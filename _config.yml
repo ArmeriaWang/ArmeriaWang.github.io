@@ -1,7 +1,7 @@
 # ---------------- #
 #   Main Configs   #
 # ---------------- #
-baseurl: 
+baseurl: https://armeriawang.github.io
 url: https://armeriawang.github.io
 date_format: "ordinal"
 title: jekyll-theme-solid
