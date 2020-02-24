@@ -51,7 +51,8 @@ comments_provider: gitalk
 ## https://github.com/gitalk/gitalk#install
 gitalk:
     owner: ArmeriaWang
-    repo: jekyll-theme-solid
+    admin: ArmeriaWang
+    repo: armeriawang.github.io
     clientID: aa927de404a85a30b519
     clientSecret: 326bb732ed67927a1f5339f0a1139e8d2598df4e
 # 在使用其它评论组件时可点击显示 Disqus
