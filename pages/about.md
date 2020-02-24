@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Armeria Wang
-description: Armeria Wang的个人简介。
+description: Armeria Wang的个人简介
 keywords: Armeria Wang, 王翰坤
 permalink: /about/
 ---
@@ -20,8 +20,7 @@ Harbin, China \| School of Computer Science and Technology
     
 ```c++
 #include <iostream>
-int main()
-{
+int main() {
 	std::cout << "Hello, friends!" << std::endl;
 	return 0;
 }

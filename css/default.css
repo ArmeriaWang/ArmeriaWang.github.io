@@ -10,7 +10,7 @@ div.main {
   padding: 2% 5% 5% 5%;
   width: 700px;
   line-height: 150%;
-  border: 1px solid LightGrey;
+  border: 0px solid LightGrey;
 }
 
 H1, H2, H3, H4 {
@@ -97,9 +97,10 @@ div.nav a:hover {
 }
 
 div.nav {
-  border-top: 1px solid #d4d4d4;
+  /* border-top: 1px solid #d4d4d4;
   border-left: 1px solid #d4d4d4;
-  border-right: 1px solid #d4d4d4;
+  border-right: 1px solid #d4d4d4; */
+  border-bottom: 1px solid #d4d4d4;
   margin: auto;
   padding: 0 5% 0 5%;
   width: 700px;
