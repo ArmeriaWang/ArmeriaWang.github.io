@@ -12,10 +12,9 @@ Harbin, China \| School of Computer Science and Technology
   
 *Education:* Harbin Institute of Technology
 
-Software Engineering
-Computer Science & Technology
 
-*Contact:* `print '%s@%s' % ('armeriaw', 'qq.com')  #via Python`
+
+*Contact:* armeriaw@qq.com
 
 *Social:*  [github](http://github.com/armeriawang) \| [GtihubBlog](http://armeriawang.github.io) \| [CnblogsBlog](https://www.cnblogs.com/yearwhk/)
     
