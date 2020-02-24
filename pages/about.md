@@ -1,22 +1,23 @@
 ---
 layout: page
-title: Zhuang Ma
-description: Zhuang Ma的个人简介。
-keywords: Zhuang Ma, 马壮
+title: Armeria Wang
+description: Armeria Wang的个人简介。
+keywords: Armeria Wang, 王翰坤
 permalink: /about/
 ---
 
-**Software Engineer at [Sogou, Inc.](http://www.sogou.com)**
+**Undergraduate Student at [Harbin Institute of Technology](hit.edu.cn)**
 
-Beijing City, China \| Computer Software
+Harbin, China \| School of Computer Science and Technology
   
-*Education:* Wuhan Institute of Technology
+*Education:* Harbin Institute of Technology
 
-scholar, CS/IT
+Software Engineering
+Computer Science & Technology
 
-*Contact:* `print '%s@%s' % ('ChumpMa', 'gmail.com')  #via Python`
+*Contact:* `print '%s@%s' % ('armeriaw', 'qq.com')  #via Python`
 
-*Social:*  [github](http://github.com/mzlogin) \| [linkedin](http://www.linkedin.com/in/mazhuang) \| [weibo](http://weibo.com/mzlogin) \| [douban](http://www.douban.com/people/freedim/) \| [blog](http://mazhuang.org)
+*Social:*  [github](http://github.com/armeriawang) \| [GtihubBlog](http://armeriawang.github.io) \| [CnblogsBlog](https://www.cnblogs.com/yearwhk/)
     
 ```c++
 #include <iostream>
