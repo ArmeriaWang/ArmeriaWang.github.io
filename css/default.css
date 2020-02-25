@@ -47,12 +47,20 @@ H4 {
 }
 
 blockquote {
-  margin: 0 0 0 0.25em;
-  padding: 0 0 0 0.5em;
+  /* margin: 0 0 0 0.25em;
+  margin-top: 1.5em;
+  padding: 0 0 0 0.5em; */
+  margin: 1.5rem .2rem;
+	padding: .3rem .5rem;
   /* border-left: 0.25em lightgrey solid; */
   color: #6f6f6f;
 	border-left: .4rem solid gray;
 }
+
+blockquote p {
+	padding: .2rem 1.5rem;
+}
+
  
 pre {
   font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
