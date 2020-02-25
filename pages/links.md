@@ -7,5 +7,5 @@ permalink: /links/
 ---
 
 <ul>
-<li><a href="http://armeriawang.github.org//">码志</a></li>
+<li><a href="http://armeriawang.github.org//">Armeria的主页</a></li>
 </ul>

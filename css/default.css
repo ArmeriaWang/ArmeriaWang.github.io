@@ -14,6 +14,15 @@ div.main {
   border: 0px solid LightGrey;
 }
 
+div.post_title {
+  font-family: "CMU Serif", "Arial", "宋体";
+  color: #555;
+  font-size: 1.75em;
+  font-weight: bold;
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+
 H1, H2, H3, H4 {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, "等线", STKaiti, SimSun, serif; 
   width: 98%;
@@ -216,9 +225,11 @@ div.paginator {
 }
 
 div.post_footer {
+  font-family: 'Times New Roman', Times, serif;
   text-align: right;
   font-size: 0.9em;
   font-style: italic;
+  border-top: LightGrey 1px solid;
 }
 
 div.post_footer a {

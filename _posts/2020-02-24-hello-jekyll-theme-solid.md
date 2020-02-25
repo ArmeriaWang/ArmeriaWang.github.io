@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello, jekyll-theme-solid
-pageTitle: Hello, World!
+postTitle: Hello, World!
 categories: Jekyll
 description: say hello
 keywords: Jekyll

@@ -2,7 +2,9 @@
 <div class="container">
     {% include navigation.html %}
     <div class="main">
-        <p style="font-family: 'CMU Serif', 'Arial', '宋体'; font-size: 1.75em; font-weight: bold;"> {{ page.pageTitle }} </p>
+        <div class="post_title">
+            <p> 🌸 {{ page.postTitle }} </p>
+        </div>
         {{ content }}
         {% if page.categories %}
         <div class="post_footer">
@@ -17,13 +19,13 @@
             {% if page.previous.url %}
             <li>
                 <span>上一篇</span>
-                <a href="{{page.previous.url}}">{{page.previous.pageTitle}}</a>
+                <a href="{{page.previous.url}}">{{page.previous.postTitle}}</a>
             </li>
             {% endif %}
             {% if page.next.url %}
             <li>
                 <span>下一篇</span>
-                <a href="{{page.next.url}}">{{page.next.pageTitle}}</a>
+                <a href="{{page.next.url}}">{{page.next.postTitle}}</a>
             </li>
             {% endif %}
         </ul>
