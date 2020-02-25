@@ -10,7 +10,7 @@ permalink: /about/
 
 Harbin, China \| School of Computer Science and Technology
 
-**Homepage:** [armeria.wang](armeria.wang)
+**Homepage:** [armeria.wang](https://armeria.wang)
 
 **Contact:** armeriaw@qq.com
 
