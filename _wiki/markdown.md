@@ -21,14 +21,14 @@ keywords: Markdown
 ### 超链接
 
 ```
-[码志](http://mazhuang.org)
+[码志](http://armeria.wang)
 
-<http://mazhuang.org>
+<http://armeria.wang>
 ```
 
-[码志](http://mazhuang.org)  
+[码志](http://armeria.wang)  
 
-<http://mazhuang.org>
+<http://armeria.wang>
 
 ### 列表
 
