@@ -2,9 +2,11 @@
 layout: post
 title: Hello, jekyll-theme-solid
 pageTitle: Hello, World!
-categories: jekyll
+categories: Jekyll
 description: say hello
-keywords: jekyll, theme
+keywords: Jekyll
 ---
 
 A simple and clean jekyll theme without javascript.
+
+这里是Armeria的主页。
