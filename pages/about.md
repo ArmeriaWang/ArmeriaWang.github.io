@@ -6,17 +6,15 @@ keywords: Armeria Wang, 王翰坤
 permalink: /about/
 ---
 
-**Undergraduate Student at [Harbin Institute of Technology](hit.edu.cn)**
+**Undergraduate Student at [Harbin Institute of Technology](http://www.hit.edu.cn)**
 
 Harbin, China \| School of Computer Science and Technology
-  
-*Education:* Harbin Institute of Technology
 
+**Homepage:** [armeria.wang](armeria.wang)
 
+**Contact:** armeriaw@qq.com
 
-*Contact:* armeriaw@qq.com
-
-*Social:*  [github](http://github.com/armeriawang) \| [GtihubBlog](http://armeriawang.github.io) \| [CnblogsBlog](https://www.cnblogs.com/yearwhk/)
+**Social:**  [github](http://github.com/armeriawang) \| [CNblogs](https://www.cnblogs.com/yearwhk/) \| [bilibili](https://space.bilibili.com/4812297)
     
 ```c++
 #include <iostream>

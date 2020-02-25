@@ -1,14 +1,15 @@
 ﻿/* modified from http://www.yinwang.org/main.css */
 body {
-  font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "等线", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "CMU Serif", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", 
+  "宋体", "等线", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   background-color: white;
-  font-size: 100%;
+  font-size: 120%;
 }
 
 div.main {
   margin: auto;
   padding: 2% 5% 5% 5%;
-  width: 700px;
+  width: 800px;
   line-height: 150%;
   border: 0px solid LightGrey;
 }
@@ -20,22 +21,37 @@ H1, H2, H3, H4 {
   color: #666666;
 }
 
-H1, H2 {
+H1 {
   margin-bottom: 1.67em;
   padding: 0.2em;
   border-bottom: 2px LightGrey solid;
 }
 
-H3, H4 {
-  margin-top: 2.14em;
-  margin-bottom: 1.5em;
-  border-bottom: 1px LightGrey solid;
+H2 {
+  margin-top: 1.75em;
+  margin-bottom: 1.2em;
+  padding: 0.2em;
+  border-bottom: 2px LightGrey solid;
+}
+
+H3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  /* border-bottom: 1px LightGrey solid; */
+}
+
+H4 {
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+  /* border-bottom: 1px LightGrey solid; */
 }
 
 blockquote {
   margin: 0 0 0 0.25em;
   padding: 0 0 0 0.5em;
-  border-left: 0.25em lightgrey solid;
+  /* border-left: 0.25em lightgrey solid; */
+  color: #6f6f6f;
+	border-left: .4rem solid gray;
 }
  
 pre {
@@ -100,13 +116,15 @@ div.nav {
   /* border-top: 1px solid #d4d4d4;
   border-left: 1px solid #d4d4d4;
   border-right: 1px solid #d4d4d4; */
+  font-family: "CMU Serif", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", 
+  "等线", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   border-bottom: 1px solid #d4d4d4;
   margin: auto;
   padding: 0 5% 0 5%;
-  width: 700px;
-  height: 1.5em;
-  line-height: 150%;
-  font-size: 1em;
+  width: 800px;
+  height: 1.4em;
+  line-height: 120%;
+  font-size: 0.9em;
 }
 
 div.nav_rss {
