@@ -21,12 +21,12 @@ keywords: Markdown
 ### 超链接
 
 ```
-[码志](http://armeria.wang)
+[主页](http://armeria.wang)
 
 <http://armeria.wang>
 ```
 
-[码志](http://armeria.wang)  
+[主页](http://armeria.wang)  
 
 <http://armeria.wang>
 
