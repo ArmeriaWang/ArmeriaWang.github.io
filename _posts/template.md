@@ -1,9 +1,11 @@
 ---
 layout: post
-title: template page
-categories: [cate1, cate2]
-description: some word here
-keywords: keyword1, keyword2
+title: template
+postTitle: Template页面
+categories: [Java, Software Contruction]
+description: 软件构造第X周博客
+keywords: Java, Software Contruction
+typora-root-url: ..
 ---
 
 Content here

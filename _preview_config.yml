@@ -2,10 +2,12 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://armeriawang.github.io
+url: localhost:4000
 date_format: "ordinal"
 title: Armeria's Blog
 author: Armeria Wang
+
+future: true
 
 # ---------------- #
 #   RSS / Email    #

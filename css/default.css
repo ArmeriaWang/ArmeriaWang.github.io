@@ -171,12 +171,13 @@ img.emoji {
 hr {
   border: 0;
   height: 2px;
+  
   background-color: LightGrey;
   margin: 0.75em 0;
 }
 
 strong {
-  color: #666666;
+  color: #202020
 }
 
 div.overview {
