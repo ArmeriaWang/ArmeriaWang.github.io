@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Links
 description: 朋友们的博客和主页
 keywords: 友情链接
