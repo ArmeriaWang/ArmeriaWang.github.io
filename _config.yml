@@ -7,6 +7,8 @@ date_format: "ordinal"
 title: Armeria's Blog
 author: Armeria Wang
 
+future: false
+
 # ---------------- #
 #   RSS / Email    #
 # ---------------- #
