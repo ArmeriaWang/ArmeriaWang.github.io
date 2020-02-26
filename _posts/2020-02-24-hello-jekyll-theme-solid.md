@@ -4,6 +4,7 @@ title: Hello, jekyll-theme-solid
 postTitle: Hello, World!
 categories: Jekyll
 description: say hello
+mathjax: false
 keywords: Jekyll
 ---
 

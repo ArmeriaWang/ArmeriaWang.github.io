@@ -4,8 +4,8 @@ title: java-gui-first-step
 postTitle: Java开发桌面GUI应用初探
 categories: [Java, Swing, GUI, Software Construction]
 description: 软件构造第2周博客
-published: true
 keywords: Java, GUI, Software Construction, Desktop Applications, Swing
+mathjax: false
 typora-root-url: ..
 ---
 
@@ -38,5 +38,5 @@ swing包含了构建GUI的各种组件`Components`，如窗口（`JFrame`和`JDi
 
 界面左侧为功能区，从上至下分别放置三个主要功能；界面右侧为信息区，包含两个表，用于展示目前图中的节点信息和边信息。
 
-### GUI初步建立
+## GUI初步建立
 
