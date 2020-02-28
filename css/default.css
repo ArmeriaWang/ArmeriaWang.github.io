@@ -46,8 +46,8 @@ H2 {
 H3 {
   margin-top: 1.5em;
   margin-bottom: 0.75em;
-  border-bottom: 1px LightGrey solid;
-  width: 200px;
+  border-bottom: 1px LightGrey dotted;
+  width: 61%
   /* border-bottom: 1px LightGrey solid; */
 }
 
