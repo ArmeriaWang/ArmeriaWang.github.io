@@ -15,6 +15,8 @@ Harbin, China \| School of Computer Science and Technology
 **Contact:** armeriaw@qq.com
 
 **Social:**  [github](http://github.com/armeriawang) \| [CNblogs](https://www.cnblogs.com/yearwhk/) \| [bilibili](https://space.bilibili.com/4812297)
+
+**Telegram:** [phlio](https://t.me/joinchat/JOzLghUKRn7yS7D1hX5GXg)
     
 ```c++
 #include <iostream>
