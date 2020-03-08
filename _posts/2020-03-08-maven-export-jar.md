@@ -25,16 +25,16 @@ typora-root-url: ..
 
 以下是你可能会问的一些问题：
 
-1. - **Q**：Maven是什么？
+1. - **Q：Maven是什么？**
    - **A**：Maven是专门为Java项目打造的管理和构建工具。它像是一条标准化的流水线，只要我们把源代码、测试数据按照Maven的要求组织好，它就能自动完成、编译、测试、打包等整套流程。此外，它还是个包管理器，帮你打理好你所需的各种外部库。
 
-2. - **Q**：为什么要用Maven？
-   - **A**：因为它极为高效，而且简单。
+2. - **Q：为什么要用Maven？**
+   - **A**：因为它极为高效，而且简单。  
 
-3. - **Q**：Maven好学吗？
+3. - **Q：Maven好学吗？**
    - **A**：非常好学。我们所要做的几乎只是写好`pom.xml`这一个配置文件而已，而且本文还会提供亲测有效的模板。Maven也是早晚都得用的东西，不如趁早把它学了，提高今后的开发效率。
 
-4. - **Q**：我已经基本写完了实验，换Maven麻烦吗，值得换吗？
+4. - **Q：我已经基本写完了实验，换Maven麻烦吗，值得换吗？**
    - **A**：不麻烦。你只需要备份好`src`、`test`等文件夹。当然，如果确定实验代码不用再改，也不认为自己目前的打包流程麻烦，也可不用Maven，或等到之后的实验再尝试。
 
 <div style='display: none'>
@@ -300,6 +300,10 @@ $ mvn clean package
 为了之后能正常与命令行交互，还是在`root`目录下，新建类`Terminal`，以模拟cmd的运行，
 
 ```java
+/*
+    /src/root/Terminal.java
+*/
+
 package root;
 
 import java.io.*;
@@ -491,9 +495,13 @@ class ReaderConsole implements Runnable {
 
 这样，我们就完美地实现了各P程序的单独运行。
 
-`Terminal`类的完整代码展示如下，
+改进后的`Terminal`类的完整代码展示如下，
 
 ```java
+/*
+    /src/root/Terminal.java
+*/
+
 package root;
 
 import java.awt.*;
@@ -589,6 +597,10 @@ public class Terminal {
 接下来要实现P1、P2、P3的分开打包。我们只需额外打包三个类，利用入口`Root`分别运行三个对应的命令即可。**这三个jar只要第一次打包完成后放到根目录下就行，之后再也不用管它们，再也不用任何的修改**。我们在`root`目录下新建`RunPx`类，代码如下，
 
 ```java
+/*
+    /src/root/RunPx.java
+*/
+
 package root;
 
 import java.io.BufferedReader;
