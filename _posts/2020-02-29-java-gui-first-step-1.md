@@ -2,7 +2,7 @@
 layout: post
 title: java-swing-dev-1
 postTitle: Java swing桌面GUI应用开发（一）——初探
-categories: [Java, Swing, GUI, Software Construction]
+categories: [Java, GUI, Software Construction]
 description: 软件构造第2周博客
 keywords: Java, GUI, Software Construction, Desktop Applications, Swing
 mathjax: false
