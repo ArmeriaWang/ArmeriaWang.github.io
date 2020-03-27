@@ -3,7 +3,7 @@ layout: post
 title: maven-export-jar
 postTitle: 纯Maven一键导出jar流程
 categories: [Java, Maven, Software Construction]
-description: 软件构造第X周博客
+description: 软件构造第3周博客
 keywords: Java, Software Construction, Maven
 published: true
 mathjax: false
@@ -40,12 +40,15 @@ typora-root-url: ..
 <div style='display: none'>
 
 ### V1.1更新说明
-    - V1.0版的流程可能出现运行`Px.jar`后无法正常向命令行中输入和交互的情况。这一版中，增加了`Terminal`类，修复了上述问题。
-    - 其他格式和表述改进。
+- V1.0版的流程可能出现运行`Px.jar`后无法正常向命令行中输入和交互的情况。这一版中，增加了`Terminal`类，修复了上述问题。
+- 其他格式和表述改进。
+
 ### V1.2更新说明
-    - V1.1版的流程可能出现运行`Px.jar`后无法自动终止的情况。这一版中，改进了`Terminal`类，修复了上述问题。
-    - 增加了目录
-    - 其他格式和表述改进。
+- V1.1版的流程可能出现运行`Px.jar`后无法自动终止的情况。这一版中，改进了`Terminal`类，修复了上述问题。
+- 增加了目录。
+- 其他格式和表述改进。
+- 本文最新版[在线阅读点我](http://armeria.wang/2020/03/08/maven-export-jar/)。
+- **今后本文仅在线上更新，不再发布pdf版**。
 
 </div>
 
@@ -195,7 +198,7 @@ File > New > Project... > Maven > Maven Project，下一步勾选「Create a sim
 
 这两行分别设置源代码目录和测试目录。
 
-实验要求把P1、P2、P3分开打包，但正常情况下，Maven一次只能以某一个class为主类，打包一个jar。如果我们分别以三个问题的三个类为主类分别打包，就要在每次build前修改设置和路径，很麻烦。有没有一劳永逸的办法呢？
+实验要求把P1、P2、P3分开打包，但正常情况下，**Maven一次**（一个LifeCycle内）**只能以某一个class为主类，打包一个jar**。如果我们分别以三个问题的三个类为主类分别打包，就要在每次build前修改设置和路径，很麻烦。有没有一劳永逸的办法呢？
 
 ## 2 建立辅助类
 
@@ -624,6 +627,8 @@ public class RunPx {
     }
 }
 ```
+
+需要注意的是，如果你编写了GUI客户端程序，希望可以直接点开`.jar`文件运行，那么就不要调用`Terminal`类。如果调用，会发生「关不掉」的情况，因为后台的命令行程序始终在运行。
 
 将`pom.xml`中的`<mainClass>`改为`root.RunPx`，`<outputFile>`先后设为`P1.jar`、`P2.jar`、`P3.jar`，`RunPx`类的值对应地先后设为1、2、3，分别用Maven打出三个包即可。
 
