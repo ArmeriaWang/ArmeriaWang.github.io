@@ -499,15 +499,6 @@ public class FriendshipGraphGUI extends JFrame {
         endNameText.setBounds(70, yCoord, 125, 25);
         panel.add(endNameText);
 
-        /* JButton swapStartEndButton = new JButton("Swap");
-        swapStartEndButton.setBounds(210, yCoord - 23, 80, 35);
-        swapStartEndButton.addActionListener(e -> {
-            String temp = endNameText.getText();
-            endNameText.setText(startNameText.getText());
-            startNameText.setText(temp);
-        });
-        panel.add(swapStartEndButton); */
-
         yCoord += 35;
 
         JLabel queryDistanceInfoLabel = new JLabel("");
