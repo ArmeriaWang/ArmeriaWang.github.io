@@ -168,3 +168,7 @@ panel.add(addPersonButton);
 ![image-20200229003137329](/images/asserts/image-20200229003137329.png)
 
 下一篇文章中，我将着重探讨如何使用表格组件`JTable`和表格模型`TableModel`进行数据的展示和实时更新，并发布这个小应用的GUI部分的源代码。
+
+## 参考资料
+
+- [CSDN - Java Swing开发教程](https://blog.csdn.net/xietansheng/article/details/72814492)
