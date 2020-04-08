@@ -1,9 +1,9 @@
 ---
 layout: post
-title: appreciation-coriolan-overture
-postTitle: 音乐赏析 - 贝多芬《科里奥兰序曲》
+title: music-coriolan-overture
+postTitle: 音乐赏析（一） - 贝多芬《科里奥兰序曲》
 categories: [Music]
-description: 音乐赏析 - 贝多芬《科里奥兰序曲》
+description: 音乐赏析（一） - 贝多芬《科里奥兰序曲》
 keywords: Music, Beethoven, Coriolan Overture
 mathjax: false
 typora-root-url: ..
