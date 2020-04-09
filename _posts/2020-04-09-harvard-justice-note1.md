@@ -3,7 +3,7 @@ layout: post
 title: template
 postTitle: 正义之辩——随录（一）
 categories: [Justice, Philosophy, Open Class Notes]
-description: 软件构造第X周博客
+description: 哈佛大学《正义之辩》课堂随录（一）
 keywords: Harvard, Justice, Philosophy, Political Philosophy, Open Class Notes
 published: true
 mathjax: false
@@ -14,11 +14,15 @@ typora-root-url: ..
 >
 > *Micheal Sandel*
 
-## 导语
+## 系列导语
 
 *Justice*（译名《正义之辩》）是哈佛大学Michael Sandel主讲的政治哲学入门课程。这门课探讨许多理论和现实的政治哲学问题。我将在我的博客上记录我的学习随想。
 
 这门课程也要求学生阅读大量的相关书籍。至于我能不能挤出时间看完，我自己是没啥信心……
+
+---
+
+本文对应课程视频P1的前半部分。
 
 ## 道德的标准
 
@@ -29,7 +33,7 @@ Sandel一上来模拟了很多两难情景，你在这些情景中扮演当事�
 Sandel随即提出了两个道德标准：
 
 - 结果论Consequentialist。把道德定义为行为的结果对世界产生的影响（locates morality in the consequence of an act），衍生出功利主义。代表人物为英国哲学家边沁。
-- 绝对论Categorical。认为道德存在绝对标准，行为是否道德存在内在判断标准（locates morality in certain duties and rights）。代表人物为德国哲学家康德。
+- 绝对论Categorical。也称分类论。认为道德存在绝对标准，行为是否道德存在内在判断标准（locates morality in certain duties and rights）。代表人物为德国哲学家康德。
 
 ## 关于政治哲学
 
@@ -58,4 +62,4 @@ Sandel指出，学习这门课程有两个风险：
 
 ## 参考资料
 
-- [bilibili - 【哈佛大学】正义之辩](https://www.bilibili.com/video/BV1jZ4y1x7SL)
+- [**课程视频** - bilibili - 【哈佛大学】正义之辩](https://www.bilibili.com/video/BV1jZ4y1x7SL)
