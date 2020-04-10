@@ -3,7 +3,7 @@ layout: post
 title: template
 postTitle: 正义之辩——随录（二）
 categories: [Justice, Philosophy, Open Class Notes]
-description: 软件构造第X周博客
+description: 哈佛大学《正义之辩》课堂随录（二）
 keywords: Harvard, Justice, Philosophy, Political Philosophy, Open Class Notes
 published: true
 mathjax: false
