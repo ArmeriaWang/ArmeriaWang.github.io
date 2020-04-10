@@ -153,7 +153,7 @@ void transfer(Entry[] newTable, boolean rehash) {
 
 ```java
 newTable[i] = e  // => newTable[3] = 3
-e = next  	     // => e = 7
+e = next         // => e = 7
 ```
 
 这意味着，原本已经被线程B整理好的链表又被A打乱了。现在主存中情形如下图所示：
