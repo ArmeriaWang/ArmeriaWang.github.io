@@ -69,7 +69,7 @@ static class Node<K,V> implements Map.Entry<K,V> {
 - $\alpha$是**装载因子**，当存储的数据项的数量超过当前容量的$\alpha$比例时，就将新建一个数组，但容量扩大一倍。然后，把原数组的内容重新哈希到经过扩容的新数组中去。注意，这里不能直接拷贝过去，因为index的计算是跟`HashMap`的大小相关的：
 
   ```java
-  index = HashCode(Key) & (Length - 1)
+  index = hash(Key) & (Length - 1)
   ```
 
   这个公式的设计是非常巧妙的。我们发现，键值对的新位置要么是在原位置，要么是在原位置的基础上再移动2次幂个的位置。这样，在扩充`HashMap`的时候，就不用真的把每个键值对的index都重新算一遍了，大幅提升了时间效率。
