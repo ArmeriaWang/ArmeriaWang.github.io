@@ -1,5 +1,5 @@
 ---
-layout: post
+ layout: post
 title: template
 postTitle: 正义之辩——随录（三）
 categories: [Justice, Philosophy, Open Class Notes]
@@ -10,7 +10,7 @@ mathjax: false
 typora-root-url: ..
 ---
 
-本文对应课程视频P2的第一部分。
+本文对应课程视频P2的上半部分。
 
 ## 最高准则
 
@@ -41,7 +41,7 @@ Sandel又举了福特汽车安全事件为例。福特汽车发现，给汽车�
 综上，我们可以总结两个反对功利主义的理由
 
 - 无法保护个体或少数人的利益
-- 不可能用金钱衡量所有事物的价值
+- 不可能准确衡量所有事物的价值、所有人的偏好
 
 ## 功利主义者的反击
 
