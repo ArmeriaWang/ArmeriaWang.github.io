@@ -18,8 +18,8 @@ JavaDocs中`HashMap`的spec是这么写的：
 
 这里头可提取出几个关键的信息：
 
-- 基于Map接口实现
-- 允许null键/值
+- 基于`Map`接口实现
+- 允许`null`键/值
 - 非同步
 - 不保证有序（如插入的顺序）
 - 不保证顺序不随时间变化。
@@ -97,9 +97,11 @@ static final int hash(Object key) {
 - **数据结构性能**。也就是之前所说的，在冲突较多的情况下，红黑树比链表的性能高很多。
 
 我们考虑数组大小`length`很大的情况。假设哈希函数完全均匀，那么单个桶中的最大结点数满足下面一个泊松分布：`length`个桶，做`0.75 * length`次相同实验，每次实验将一个数据项随机地放入其中一个桶，单个桶内的数据项的数目为$k$的概率就是
+
 $$
 P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda}
 $$
+
 唯一的问题是$\lambda$是多少？`HashMap`的注释中，直接给出了它的值0.5，但没有给出理由，只说了这个值与载入因子$\alpha$相关：
 
 >Because TreeNodes are about twice the size of regular nodes, we use them only when bins contain enough nodes to warrant use(see TREEIFY_THRESHOLD). And when they become too small (due to removal or resizing) they are converted back to plain bins. In usages with well-distributed user hashCodes, tree bins are rarely used. Ideally, under random hashCodes, the frequency of nodes in bins follows a Poisson distribution(http://en.wikipedia.org/wiki/Poisson_distribution) **with a parameter of about 0.5** on average for the default resizing threshold of 0.75, although with a large variance because of resizing granularity. Ignoring variance, the expected occurrences of list size k are (exp(-0.5) * pow(0.5, k)/factorial(k)). The first values are:
