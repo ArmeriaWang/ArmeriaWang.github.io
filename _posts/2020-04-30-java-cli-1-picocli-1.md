@@ -330,7 +330,7 @@ public class GitCommitCommand implements Runnable {
 
 整个命令结构非常清楚。
 
-那么，这些命令为什么要实现`Runnable`接口呢？这起到什么作用？且听下篇分解。
+那么，这些命令为什么要实现`Runnable`接口呢？这起到什么作用？Lab3需要实现三个相对独立的客户端，且功能繁多，应该如何整合设计？且听下篇分解。
 
 ## 参考资料
 
