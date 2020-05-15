@@ -14,7 +14,7 @@ typora-root-url: ..
 
 ## picocli简介
 
-picocli是一个现代库和框架，适用于在 JVM 上构建命令行应用。它支持 Java、Groovy、Kotlin 和 Scala。它推出的时间还不到 3 年，但是非常受欢迎，每月的下载量超过了 50 万次。Groovy 语言使用它来实现其`CliBuilder` DSL。
+picocli是一个现代库框架，适用于在 JVM 上构建命令行应用。它支持Java、Groovy、Kotlin 和 Scala。它推出的时间还不到 3 年，但是非常受欢迎，每月的下载量超过了 50 万次。Groovy 语言使用它来实现其`CliBuilder` DSL。
 
 picocli致力于提供「最简便的方式来创建富命令行应用，使其可以在JVM上和JVM之外运行」。它提供了彩色输出、TAB键自动完成、子命令，与其他的JVM CLI相比，它还提供了一些独特的特性，比如可否定选项、重复复合参数组、重复子命令和对引用参数的复杂处理。它的源代码在单个文件中，因此我们可以选择将其作为源代码包含进来，避免添加依赖项。picocli对其丰富和细致的文档颇感自豪。
 
