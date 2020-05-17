@@ -360,6 +360,9 @@ show -b Nanjing
 
 # 取消航班
 cancel -l MU5389 -t 2020-05-02
+
+# 读取文件中的航班计划项
+read-file -f test/apps/flight/FlightSchedule_2.txt
 ```
 
 对于`314change`分支，改变命令是`add-entry`：可以通过`--middle-airport`（缩写`-ma`）选项指定一个经停机场。注意，如果指定经停机场，就必须要输入两个时间段（不能相交，后一个必须晚于前一个），例如：
