@@ -3,7 +3,7 @@ layout: post
 title: java-swing-first-step-3
 postTitle: Java swing桌面应用初探（三）——棋类游戏
 categories: [Java, GUI, Software Construction]
-description: 软件构造第5周博客
+description: 软件构造第5次博客
 keywords: Java, GUI, Software Construction, Desktop Applications, Swing
 mathjax: false
 typora-root-url: ..

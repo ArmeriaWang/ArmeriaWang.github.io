@@ -1,9 +1,9 @@
 ---
--layout: post
+layout: post
 title: java-cli-2-picocli-2
-postTitle: Java CLI设计（二）——picocli（上）
+postTitle: Java CLI设计（二）——picocli（下）
 categories: [Java, Software Construction, CLI, picocli]
-description: 软件构造第9周博客
+description: 软件构造第9次博客
 keywords: Java, Software Construction, CLI, picocli
 published: true
 mathjax: false

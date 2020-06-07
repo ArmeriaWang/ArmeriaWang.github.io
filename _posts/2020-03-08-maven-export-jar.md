@@ -3,7 +3,7 @@ layout: post
 title: maven-export-jar
 postTitle: 纯Maven一键导出jar流程
 categories: [Java, Maven, Software Construction]
-description: 软件构造第3周博客
+description: 软件构造第3次博客
 keywords: Java, Software Construction, Maven
 published: true
 mathjax: false

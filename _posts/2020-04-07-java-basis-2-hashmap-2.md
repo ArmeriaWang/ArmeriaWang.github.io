@@ -3,7 +3,7 @@ layout: post
 title: java-basis-2-hashmap-2
 postTitle: Java基础（二）——HashMap剖析（下）
 categories: [Java, Software Construction]
-description: 软件构造第7周博客
+description: 软件构造第7次博客
 keywords: Java, Software Construction, HashMap, Data Structure
 published: true
 mathjax: true
