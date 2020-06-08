@@ -7,6 +7,8 @@
 
 [TOC]
 
+本文最新版在线阅读地址：[点我](http://armeria.wang/2020/06/05/log4j-connect-mysql/)。
+
 在软件构造Lab4中，为了实现日志过滤功能，我将log4j与MySQL数据库相连接，在本地数据库中存储日志信息。这样，就可以在MySQL中利用SQL查询语句轻松过滤日志了。
 
 ## 准备MySQL
@@ -15,7 +17,7 @@
 
 Windows 10(64bit)下载安装MySQL社区版的步骤很简单：只需在[下载页面](https://dev.mysql.com/downloads/mysql/)下载压缩包即可：
 
-![image-20200607170938428](/images/asserts/image-20200607170938428.png)
+![image-20200607170938428](../images/asserts/image-20200607170938428.png)
 
 下载到本地后解压，假设解压路径为`F:\Tools\mysql-8.0.20-winx64`。接下来配置MySQL的配置文件。在解压目录下创建`my.ini`文件，写入如下信息：
 
@@ -67,17 +69,17 @@ $ net start mysql
 
 NaviCat是MySQL的一个强大的可视化工具。在[NaviCat官网下载](http://www.navicat.com.cn/download/navicat-for-mysql)：
 
-<img src="/images/asserts/image-20200607172142368.png" alt="image-20200607172142368" style="zoom: 67%;" />
+<img src="../images/asserts/image-20200607172142368.png" alt="image-20200607172142368" style="zoom: 67%;" />
 
 正常下载安装即可。软件免费试用14天。接下来用NaviCat添加专用于Lab4日志功能的用户和数据库。
 
 ### 添加用户
 
-<img src="/images/asserts/image-20200607175237644.png" alt="image-20200607175237644" style="zoom:80%;" />
+<img src="../images/asserts/image-20200607175237644.png" alt="image-20200607175237644" style="zoom:80%;" />
 
 点击用户选项卡，新建用户。按下图填写信息：
 
-<img src="/images/asserts/image-20200607175610595.png" alt="image-20200607175610595" style="zoom:80%;" />
+<img src="../images/asserts/image-20200607175610595.png" alt="image-20200607175610595" style="zoom:80%;" />
 
 其中密码设为123456。填写完毕后保存即可。
 
@@ -85,27 +87,27 @@ NaviCat是MySQL的一个强大的可视化工具。在[NaviCat官网下载](http
 
 新建MySQL连接，
 
-<img src="/images/asserts/image-20200607175735278.png" alt="image-20200607175735278" style="zoom:80%;" />
+<img src="../images/asserts/image-20200607175735278.png" alt="image-20200607175735278" style="zoom:80%;" />
 
 
 
 按下图配置新连接`conn`
 
-<img src="/images/asserts/image-20200607175853641.png" alt="image-20200607175853641" style="zoom: 67%;" />
+<img src="../images/asserts/image-20200607175853641.png" alt="image-20200607175853641" style="zoom: 67%;" />
 
 注意用户使用`log4j`。完成后点击确定。
 
 打开刚刚新建的连接`conn`：
 
-<img src="/images/asserts/image-20200607180105887.png" alt="image-20200607180105887" style="zoom: 80%;" />
+<img src="../images/asserts/image-20200607180105887.png" alt="image-20200607180105887" style="zoom: 80%;" />
 
 然后新建数据库`lab4`，配置如下：
 
-<img src="/images/asserts/image-20200607180254079.png" alt="image-20200607180254079" style="zoom:80%;" />
+<img src="../images/asserts/image-20200607180254079.png" alt="image-20200607180254079" style="zoom:80%;" />
 
 接着在`lab4`中新建表，
 
-<img src="/images/asserts/image-20200607180432943.png" alt="image-20200607180432943" style="zoom:80%;" />
+<img src="../images/asserts/image-20200607180432943.png" alt="image-20200607180432943" style="zoom:80%;" />
 
 然后按下`F6`键（或点击 工具 => 命令列界面），进入命令行，输入以下代码：
 ```mysql
@@ -219,11 +221,11 @@ Runtime.getRuntime().addShutdownHook(new Thread(LogManager::shutdown));
 
 运行App，进行一些操作（其中包含一些有意的非法操作）。MySQL中存储了操作信息和异常信息：
 
-![image-20200607213913427](/images/asserts/image-20200607213913427.png)
+![image-20200607213913427](../images/asserts/image-20200607213913427.png)
 
 点击表格上方的「筛选」按钮，输入条件，即可筛选出想要的日志。例如，下面是条件为「操作时间在6月6日16:00到17:00之间的、操作类别为`ManageAirport`」的操作日志信息。可以看到，仅有四条日志符合条件。
 
-![image-20200607214204985](/images/asserts/image-20200607214204985.png)
+![image-20200607214204985](../images/asserts/image-20200607214204985.png)
 
 至此，利用log4j自动记录日志并存储值MySQL，并在MySQL中实现日志筛选的功能就完成了。
 
