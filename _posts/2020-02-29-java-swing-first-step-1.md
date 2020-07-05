@@ -1,7 +1,7 @@
 ---
 layout: post
 title: java-swing-first-step-1
-postTitle: Java swing桌面应用初探（一）——初探
+postTitle: Java swing桌面应用初探（一）——初步
 categories: [Java, GUI, Software Construction]
 description: 软件构造第2次博客
 keywords: Java, GUI, Software Construction, Desktop Applications, Swing
