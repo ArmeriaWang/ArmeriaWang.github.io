@@ -19,6 +19,7 @@ By [ArmeriaWang@github](https://armeriawang.github.io)
 ## T1
 
 本算法的功能是计算
+
 $$
 \begin{aligned}
 \textrm{Answer} 
@@ -28,6 +29,7 @@ $$
 &= O(n^3)
 \end{aligned}
 $$
+
 不难发现，$x$的值与时间复杂度是同阶的。因此，该算法的时间复杂度也为$O(n^3)$。
 
 ## T2
