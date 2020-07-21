@@ -34,9 +34,9 @@ $$
 
 ## T2
 
-因为$f(n)=O(g(n))$，所以$\exist c_1>0, n_1, \forall n>n_1$，有$0\le f(n) \le c_1g(n)$。
+因为$f(n)=O(g(n))$，所以$\exists c_1>0, n_1, \forall n>n_1$，有$0\le f(n) \le c_1g(n)$。
 
-因为$g(n)=O(h(n))$，所以$\exist c_2>0, n_2, \forall n>n_2$，有$0\le g(n) \le c_2h(n)$。
+因为$g(n)=O(h(n))$，所以$\exists c_2>0, n_2, \forall n>n_2$，有$0\le g(n) \le c_2h(n)$。
 
 取$n' = \max\{n_1, n_2\}$，则$\forall n > n'$，有$0 \le f(n) \le c_1g(n) \le c_1\cdot c_2h(n)$。由于$c_1, c_2>0$，所以$c_1\cdot c_2 >0$，$f(n)=O(h(n))$。
 
