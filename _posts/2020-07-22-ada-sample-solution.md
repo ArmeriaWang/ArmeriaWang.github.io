@@ -14,7 +14,11 @@ typora-root-url: ..
 
 By [ArmeriaWang@github](https://armeriawang.github.io)
 
+[Online Version](http://armeria.wang/2020/07/22/ada-sample-solution/)
+
 [TOC]
+
+
 
 ## T1
 
@@ -22,15 +26,14 @@ By [ArmeriaWang@github](https://armeriawang.github.io)
 
 $$
 \begin{aligned}
-\textrm{Answer} 
+x
 &= \sum_{i=1}^{n}\sum_{j=1}^{i}\sum_{k=1}^{i+j}1\\
 &= \sum_{i=1}^{n}\sum_{j=1}^{i}i+j\\
 &= \frac{1}{2}[n+\sum_{i=1}^n3i^2]\\
-&= O(n^3)
 \end{aligned}
 $$
 
-不难发现，$x$的值与时间复杂度是同阶的。因此，该算法的时间复杂度也为$O(n^3)$。
+不难发现，$x$的值与时间复杂度是同阶的。由于$x=O(n^3)$，因此该算法的时间复杂度也是$O(n^3)$。
 
 ## T2
 
@@ -93,7 +96,7 @@ $$
 T(n,k)=2T(n/2, k/2) + n
 $$
 
-其中右侧最后一项$n$为快速选择算法的平均复杂度。用代入法容易证明，$T(n,k)=n\log{k}$。
+注意到$k\le n$，用代入法容易证明，$T(n,k)=O(n\log{k})$。
 
 ## T5
 
@@ -182,6 +185,8 @@ return f[n][k]
 ### 时间复杂度
 
 预处理的过程是$O(n^2)$的，状态数是$O(nk)$个，每个状态的计算需要$O(n)$的时间，因此总的复杂度为$O(n^2 + n^2k) = O(n^2k)$。
+
+拓展：本题可以采用[斜率优化](https://oi-wiki.org/dp/opt/slope/)的方法进一步压缩时间复杂度。
 
 ## T7
 
@@ -275,7 +280,7 @@ end
 
 ## T10
 
-设估价函数$f$为「当前结点的最小出边和终点$T$的最小入边之和」。注意，当前结点的出边包含$T$，需要进行特殊检查。
+设估价函数$h$为「当前结点的最小出边和终点$T$的最小入边之和」。注意，如果当前结点的出边包含$T$，就需要进行特殊检查。
 
 图中点数过多，这里只以结点$S$、1、6、7、8、9、11形成的子图为例（终点为11）：
 
