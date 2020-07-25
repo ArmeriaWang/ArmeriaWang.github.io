@@ -60,6 +60,21 @@ Sandel指出，学习这门课程有两个风险：
 
 唤醒大家对理性的渴望，and see where it might lead.
 
+## 课程目录
+
+1. The Moral Side Of Murder
+2. Putting A Price Tag On Life
+3. Free To Choose
+4. This Land Is My Land
+5. Hired Guns
+6. Mind Your Motive
+7. A Lesson In Lying
+8. What's A Fair Start
+9. Arguing Affirmative Action
+10. The Good Citizen
+11. The Claims Of Community
+12. Debating Same-sex marriage
+
 ## 参考资料
 
 - [**课程视频** - bilibili - 【哈佛大学】正义之辩](https://www.bilibili.com/video/BV1jZ4y1x7SL)
