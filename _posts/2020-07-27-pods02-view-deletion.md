@@ -147,11 +147,11 @@ SP查询就是选择原关系中的特定行和列。显然，要删除这类查
 
 对于一个有$n$个元素、$m$个集合$S_i$的hitting set问题实例，我们构造其对应的source side-effect问题实例。
 
-- 我们把每个$S_{i}=\left\{x_{i_1},x_{i_2},\dots x_{i_k}\right\}\subseteq\left\{x_{1},\dots,x_{n}\right\}$都编码为关系$R_0(S, A_1, \dots, A_n)$中的一个tuple$\left(s_{i}, d, \ldots, d, x_{i_{1}}, d, \ldots d, x_{i_{2}}, d, \ldots, d, x_{i_{k}}, d, \ldots, d\right)$，其中$d$是一个「虚元（dummy element）」。
+- 我们把每个$S_{i}=\left\{x_{i_1},x_{i_2},\ldots x_{i_k}\right\}\subset\left\{x_{1},\ldots,x_{n}\right\}$都编码为关系$R_0(S, A_1, \dots, A_n)$中的一个tuple$\left(s_{i}, d, \ldots, d, x_{i_{1}}, d, \ldots d, x_{i_{2}}, d, \ldots, d, x_{i_{k}}, d, \ldots, d\right)$，其中$d$是一个「虚元（dummy element）」。
 
   换句话说，$S_i$对应的特征tuple，就是对于自己包含的变元$x_i$，列$A_i$下面的值就是$x_i$；对于自己没有包含的变元$x_j$，列$A_j$下面就是$d$。
 
-- 除了关系$R_0$，还有$n$个额外的关系$R_1, \dots, R_n$，每个形如$R_i(A_i, B_i, C)$的形式，且都恰好包含$n+1$个tuples：$\left(x_{i}, \alpha_{0}, c\right),\left(d, \alpha_{1}, c\right), \ldots,\left(d, \alpha_{n}, c\right)$。即只有第一行是$(x_i, \alpha_0, c)$，下面的$n$行都是$(d, \alpha_i,c)$。
+- 除了关系$R_0$，还有$n$个额外的关系$R_1, \dots, R_n$，每个都形如$R_i(A_i, B_i, C)$的形式，且都恰好包含$n+1$个tuples：$\left(x_{i}, \alpha_{0}, c\right),\left(d, \alpha_{1}, c\right), \ldots,\left(d, \alpha_{n}, c\right)$。即只有第一行是$(x_i, \alpha_0, c)$，下面的$n$行都是$(d, \alpha_i,c)$。
 
 如上构造出的$n+1$个关系如下图所示。
 
