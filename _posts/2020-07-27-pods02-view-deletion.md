@@ -147,7 +147,7 @@ SP查询就是选择原关系中的特定行和列。显然，要删除这类查
 
 对于一个有$n$个元素、$m$个集合$S_i$的hitting set问题实例，我们构造其对应的source side-effect问题实例。
 
-- 我们把每个$S_{i}=\{x_{i_1},x_{i_2},\dots x_{i_k}\}\subseteq\left\{x_{1}, \ldots, x_{n}\right\}$都编码为关系$R_0(S, A_1, \dots, A_n)$中的一个tuple$\left(s_{i}, d, \ldots, d, x_{i_{1}}, d, \ldots d, x_{i_{2}}, d, \ldots, d, x_{i_{k}}, d, \ldots, d\right)$，其中$d$是一个「虚元（dummy element）」。
+- 我们把每个$S_{i}=\{x_{i_1},x_{i_2},\dots x_{i_k}\}\subseteq\left\{x_{1}, \dots, x_{n}\right\}$都编码为关系$R_0(S, A_1, \dots, A_n)$中的一个tuple$\left(s_{i}, d, \ldots, d, x_{i_{1}}, d, \ldots d, x_{i_{2}}, d, \ldots, d, x_{i_{k}}, d, \ldots, d\right)$，其中$d$是一个「虚元（dummy element）」。
 
   换句话说，$S_i$对应的特征tuple，就是对于自己包含的变元$x_i$，列$A_i$下面的值就是$x_i$；对于自己没有包含的变元$x_j$，列$A_j$下面就是$d$。
 
