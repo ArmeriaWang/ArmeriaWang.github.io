@@ -66,7 +66,7 @@ monotone的意思是，每个clause中的变量要么全negated，要么全non-n
   - 对于包含PJ或JU的询问，上述两个问题都是NP的
   - 对于SPU或SJ询问，两个问题都是P的
 
--  **标记放置问题（annotation placement problem）**。对于某个SPJU查询的结果，寻找一个位置，使得在位置上放置标记（annotation）能传播（propagate）到view上的所有位置，且view中的side-effect最小。
+-  **标记放置问题（annotation placement problem）**。对于某个SPJU查询的结果，寻找一个source中的位置，使得在该位置上放置标记（annotation）能传播（propagate）到view上的某一个指定位置，且view中的side-effect最小。
 
   结论如下：
 
@@ -181,7 +181,13 @@ SP查询就是选择原关系中的特定行和列。显然，要删除这类查
 
 ##### PJ查询
 
-用3SAT问题规约。设某个3SAT实例有$m$个子句$C_i$。对于$C_i$（不妨设它包含$x_{i_1}, x_{i_2}, x_{i_3}$三个变量），构造关系$R_i(C_i, x_{i_1}, x_{i_2}, x_{i_3})$，每个$R_i$包含七个「赋值tuples」，每个tuple对应于一组使得$C_i$为真的取值。
+用3-SAT问题规约。设某个3-SAT实例有$m$个子句$C_i$。对于$C_i$（不妨设它包含$x_{i_1}, x_{i_2}, x_{i_3}$三个变量），构造关系$R_i(C_i, x_{i_1}, x_{i_2}, x_{i_3})$，每个$R_i$包含七个「赋值tuples」，每个tuple对应于一组使得$C_i$为真的取值。此外， 对$R_1, R_2, \dots, R_{m-1}$，有一个额外的dummy tuple $(c_i,d,d,d)$；对$R_m$有两个额外的dummy tuples $(c_m,d,d,d)$和$(c_m',d,d,d)$。
+
+现在查询$Q=\Pi_{C_{1}, \ldots, C_{m}}\left(R_{1} \bowtie \ldots \bowtie R_{m}\right)$。查询结果中恰好包含$(c_1, \dots, c_m)$和$(c_1, \dots, c_m')$两个tuples。不难看出，只有让原3-SAT实例成立的那组$x_i$的取值才会使得$(c_1, \dots, c_m)$出现在view中，反之亦然。
+
+假设我们需要让$(Q(S), (c_1, \dots, c_m), C_1)$被传播上标记。如果原3-SAT实例是可满足的，那么只需要标记上source中的$(R_1, t, C_1)$位置即可（$t$是3-SAT解对应的取值tuple），这样就是side-effect-free的解。反之，如果我们有了side-effect-free的解，也必然说明3-SAT实例是可满足的。这样就完成了规约。
+
+通过上述过程还可以得到推论：对于任意tuple $t\in Q(S)$，判断source中的某一tuple $t'$是否在$t$的witness路径中也是NP难的。进一步地，判断source中的某一标记是否会在output中出现也是NP难的。
 
 ##### SJU查询
 
