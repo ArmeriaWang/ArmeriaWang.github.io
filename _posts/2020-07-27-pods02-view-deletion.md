@@ -159,7 +159,7 @@ SP查询就是选择原关系中的特定行和列。显然，要删除这类查
 
 接着构造PJ查询$\Pi_{C}\left(R_{0} \bowtie R_{1} \bowtie\ldots \bowtie R_{n}\right)$。查询结果只有一个tuple $(c)$，现在要求删除它，并使得source中删除的tuples数量尽量少。
 
-考察tuple $(c)$是怎么来的。如果我们不是只选择$C$这个attribute，而是看整个$\left(R_{0} \bowtie R_{1} \bowtie\ldots \bowtie R_{n}\right)$，那么每个集合$S_i$都会生成$n^{n-|S_i|}$个tuples，也就是说有$n^{n-|S_i|}$个witness路径：对于$x_j \in S_i$的$R_j$，只有$x_j$一个选择；对于$x_j \notin S_i$的$R_j$，则有$n$种选择（$B$属性区别了各个虚元$d$）。对于前者，为了删除$t$，就需要删除$R_j$中$x_j$对应的那条tuple；对于后者，则需要完全删除$R_j$中$d$对应的$n$条tuple。
+考察tuple $(c)$是怎么来的。如果我们不是只选择$C$这个attribute，而是看整个$\left(R_{0} \bowtie R_{1} \bowtie\ldots \bowtie R_{n}\right)$，那么每个集合$S_i$都会生成$n^{n-\|S_i\|}$个tuples，也就是说有$n^{n-\|S_i\|}$个witness路径：对于$x_j \in S_i$的$R_j$，只有$x_j$一个选择；对于$x_j \notin S_i$的$R_j$，则有$n$种选择（$B$属性区别了各个虚元$d$）。对于前者，为了删除$t$，就需要删除$R_j$中$x_j$对应的那条tuple；对于后者，则需要完全删除$R_j$中$d$对应的$n$条tuple。
 
 两个问题解的对应关系也非常明显了：在hitting set的最优解中，如果某个$x_i$被选中，就删去$R_i$中的$x_i$ tuple。显然，只删去这些tuple就足以删去view中的tuple $(c)$了。另一方面，一定也存在一个source side-effect的最优解，使得它仅删除形如$(x_p, \alpha_0, c)$的tuples，并对应于hitting set的最优解。这样，PJ查询的source side-effect问题就被规约为NP问题了。
 
