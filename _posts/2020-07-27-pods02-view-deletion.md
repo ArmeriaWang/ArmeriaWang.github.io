@@ -10,6 +10,8 @@ mathjax: true
 typora-root-url: ..
 ---
 
+[doi](https://doi.org/10.1145/543613.543633)
+
 ## 关系数据库基本概念
 
 关系数据库（Relation Database）中，关系（Relation）就是表，元组（Tuple）指代一行，属性（Attribute）指代一列，位置（location）指代一个单元格：
@@ -18,7 +20,7 @@ typora-root-url: ..
 
 一个典型的关系如下：
 
-<img src="/C:/Users/Armeria/AppData/Roaming/Typora/typora-user-images/image-20200730122508864.png" alt="image-20200730122508864" style="zoom: 67%;" />
+<img src="https://i.loli.net/2020/08/01/AvC71w4xRI8tT3o.png" style="zoom:67%;" />
 
 只看前两列。可以看到，如果把位置上的实体视作结点，那么一个tuple就代表着一条边。关系表通常记作$R(A_1, A_2, \dots, A_n)$，其中$A_1, A_2, \dots, A_n$是其attributes。位置location记作三元组$(R, t, A)$。
 
