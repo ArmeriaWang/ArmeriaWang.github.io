@@ -17,7 +17,7 @@ typora-root-url: ..
 
 注意WSL 2仅支持Win10 2004以上的版本，需要先把Win10更新到2004：
 
-https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#update-to-wsl-2
+[安装WSL 2微软官方文档](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#update-to-wsl-2)
 
 Ubuntu版本选择18.04 LTS。
 
@@ -29,7 +29,7 @@ Microsoft Store中安装Windows Terminal，用它操作Ubuntu。
 
 镜像包非常大，WSL放在系统盘会对机器造成很大压力，因此要把WSL迁移到其他盘：
 
-https://www.jskap.com/notes/how-to-move-wsl2-disto/
+[WSL 2迁移步骤](https://www.jskap.com/notes/how-to-move-wsl2-disto/)
 
 注意，无论下载的`LxRunOffline`是新版还是旧版，一定要按照旧版方式的操作：先转成WSL 1，然后再迁移，最后转回WSL 2。直接以WSL 2迁移可能会失败。
 
@@ -41,7 +41,7 @@ https://www.jskap.com/notes/how-to-move-wsl2-disto/
 cd /etc/apt && sudo cp sources.list sources.list.backup && sudo vim sources.list 
 ```
 
-全删除后输入（清华源https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/，注意把第一段的注释都去掉）：
+全删除后输入（代码来自[清华源](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/)，注意把官方代码第一段的注释都去掉）：
 
 ```shell
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
@@ -54,7 +54,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted
 deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
 ```
 
-（也可以用阿里源：https://developer.aliyun.com/mirror/ubuntu）
+（也可以用[阿里源](https://developer.aliyun.com/mirror/ubuntu)）
 
 保存后更新并安装pip3和rpyc：
 
@@ -66,13 +66,15 @@ pip3 install rpyc
 
 如果pip3无法安装，还需要换掉pip3的源（永久修改）：
 
-https://blog.csdn.net/yuzaipiaofei/article/details/80891108
+[更换pip3国内镜像](https://blog.csdn.net/yuzaipiaofei/article/details/80891108)
 
 ## 安装docker
 
-https://www.cnblogs.com/yunfeifei/p/13158845.html
+WSL 2支持跑docker，安装步骤如下：
 
-如果运行失败，需要
+[WSL 2安装docker](https://www.cnblogs.com/yunfeifei/p/13158845.html)
+
+如果最后docker运行失败，需要先
 
 ```shell
 sudo adduser $USER docker
