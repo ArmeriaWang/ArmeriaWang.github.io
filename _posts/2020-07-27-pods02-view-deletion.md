@@ -3,8 +3,7 @@ layout: post
 title: pods02-view-deletion
 postTitle: 论文笔记 - PODS02 Peter Buneman
 categories: [Paper Notes, Database, PODS]
-description: 论文笔记 - PODS02, On Propagation of Deletions and Annotations Through
-Views, Peter Buneman
+description: 论文笔记 - PODS02, On Propagation of Deletions and Annotations Through Views, Peter Buneman
 keywords: Paper Notes, Database, PODS, View Deletion
 published: true
 mathjax: true
