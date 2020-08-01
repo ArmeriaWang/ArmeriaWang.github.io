@@ -13,7 +13,7 @@ typora-root-url: ..
 
 这比赛的镜像和数据体量都很大，而且后端在Linux跑，前端在Windows上跑。官方文档是要求开VMware虚拟机，这就不太能顶得住。于是我摸索了一个把后端放到WSL 2上跑的操作步骤，可以节约不少系统资源。
 
-## 安装WSL2和Windows Terminal
+## 安装WSL 2和Windows Terminal
 
 注意WSL 2仅支持Win10 2004以上的版本，需要先把Win10更新到2004：
 
@@ -31,7 +31,7 @@ Microsoft Store中安装Windows Terminal，用它操作Ubuntu。
 
 [WSL 2迁移步骤](https://www.jskap.com/notes/how-to-move-wsl2-disto/)
 
-注意，无论下载的`LxRunOffline`是新版还是旧版，一定要按照旧版方式的操作：先转成WSL 1，然后再迁移，最后转回WSL 2。直接以WSL 2迁移可能会失败。
+注意，无论下载的`LxRunOffline`是新版还是旧版，都一定要按照旧版方式的操作：先转成WSL 1，然后再迁移，最后转回WSL 2。直接以WSL 2迁移可能会失败。
 
 *可选*：在VS Code中安装插件`Remote - WSL`，然后点击左下角的`><`图标，随便在WSL中打开一个文件夹，等待连接完成。连接完成后，就能在WSL中用`code`命令打开文件了。不过`code`不能`sudo`，需要管理员权限的地方还是要`vim`。
 

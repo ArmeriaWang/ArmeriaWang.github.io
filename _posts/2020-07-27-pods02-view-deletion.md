@@ -24,7 +24,7 @@ typora-root-url: ..
 
 只看前两列。可以看到，如果把位置上的实体视作结点，那么一个tuple就代表着一条边。关系表通常记作$R(A_1, A_2, \dots, A_n)$，其中$A_1, A_2, \dots, A_n$是其attributes。位置location记作三元组$(R, t, A)$。
 
-关系数据库的查询操作主要分为四种：S（select，选择行），P（projection，选择列），J（join，笛卡尔积），U（union，并）。关系代数基础见Ullman的[课件](http://infolab.stanford.edu/~ullman/fcdb/aut07/slides/ra.pdf)。
+关系数据库的查询操作主要分为四种：S（select $\sigma$，选择行），P（projection $\Pi$，选择列），J（join $\bowtie$，自然连接，将两个关系中都出现的属性相等的tuple进行选择和合并），U（union $\cup$，并）。关系代数基础见Ullman的[课件](http://infolab.stanford.edu/~ullman/fcdb/aut07/slides/ra.pdf)。
 
 ## 几个经典NP问题
 
@@ -56,7 +56,7 @@ monotone的意思是，每个clause中的变量要么全negated，要么全non-n
 
 *On Propagation of Deletions and Annotations Through Views*（PODS 2002）主要讨论如下两个问题：
 
-- **视图删除问题（view deletion problem）**。分为两个小问题：
+- **view deletion problem**。分为两个小问题：
 
   1. **view side-effect problem**。对于某个SPJU查询的结果（view），如何知道：能否删除原关系（source）中的一些tuple，使得view中的指定tuple也被删除，且对于view是side-effect-free的（或求view side-effect最小的删除方案）。
   2. **source side-effect problem**。对于某个SPJU查询的结果，要求删除source中尽量少的tuples，使得view中的指定tuple也被删除。这个问题中无视view中的side-effect。
@@ -66,7 +66,7 @@ monotone的意思是，每个clause中的变量要么全negated，要么全non-n
   - 对于包含PJ或JU的询问，上述两个问题都是NP的
   - 对于SPU或SJ询问，两个问题都是P的
 
--  **标记放置问题（annotation placement problem）**。对于某个SPJU查询的结果，寻找一个source中的位置，使得在该位置上放置标记（annotation）能传播（propagate）到view上的某一个指定位置，且view中的side-effect最小。
+-  **annotation placement problem**。对于某个SPJU查询的结果，寻找一个source中的位置，使得在该位置上放置标记（annotation）能传播（propagate）到view上的某一个指定位置，且view中的side-effect最小。
 
   结论如下：
 
@@ -116,7 +116,7 @@ JU查询的view side-effect problem同样可以被monotone 3-SAT问题规约。
 
 - 对于每个子句$C_i$，同样构造两个单属性关系$S_i(A_2)$和$S_i'(A_1)$，都各自只包含一个tuple $c_i$。
 
-- 然后查询如下$m+n$个查询的并。
+- 然后查询如下$m+n$个查询的并。U(S(P(J)))
 
   - 对于前$m$个查询，$Q_i$对应于子句$C_i=\left(x_{i_{1}}+x_{i_{2}}+x_{i_{3}}\right)$，有$Q_{i}=\left(R_{i_{1}} \bowtie S_{i}\right) \cup\left(R_{i_{2}} \bowtie S_{i}\right) \cup \left(R_{i_{3}} \bowtie S_{i}\right)$​。对于negated子句，把$R_{i_j}$和$S_i$分别替换为$R_{i_j}’$和$S_i'$即可。
   - 对于后$n$个查询，$Q_{m+j}$对应于变量$x_j$，有$Q_{m+j}=R_{j} \bowtie R_{j}^{\prime}$。
@@ -141,7 +141,7 @@ SP查询就是选择原关系中的特定行和列。显然，要删除这类查
 
 #### source side-effect problem
 
-这一问题中，我们的目标是，要求删除source中尽量少的tuples，使得view中的指定tuple $t$也被删除。无视view中的side-effect。这是最优化问题，我们考虑用hitting set问题进行规约。
+这一问题中，我们的目标是，要求删除source中尽量少的tuples，使得view中的指定tuple $t$也被删除。无视view中的side-effect。这是最优化问题，我们考虑用hitting set问题进行规约。基本思路是把
 
 ##### PJ查询
 
@@ -181,7 +181,7 @@ SP查询就是选择原关系中的特定行和列。显然，要删除这类查
 
 ##### PJ查询
 
-用3-SAT问题规约。设某个3-SAT实例有$m$个子句$C_i$。对于$C_i$（不妨设它包含$x_{i_1}, x_{i_2}, x_{i_3}$三个变量），构造关系$R_i(C_i, x_{i_1}, x_{i_2}, x_{i_3})$，每个$R_i$包含七个「赋值tuples」，每个tuple对应于一组使得$C_i$为真的取值。此外， 对$R_1, R_2, \dots, R_{m-1}$，有一个额外的dummy tuple $(c_i,d,d,d)$；对$R_m$有两个额外的dummy tuples $(c_m,d,d,d)$和$(c_m',d,d,d)$。
+用3-SAT问题规约。设某个3-SAT实例有$m$个子句$C_i$。对于$C_i$（不妨设它包含$x_{i_1}, x_{i_2}, x_{i_3}$三个变量），构造关系$R_i(C_i, x_{i_1}, x_{i_2}, x_{i_3})$，每个$R_i$包含七个「赋值tuples」，每个tuple对应于一组使得$C_i$为真的取值。此外， 对$R_1, R_2, \dots, R_{m-1}$，有一个额外的dummy tuple $(c_i,d,d,d)$；对$R_m$有两个额外的dummy tuples $(c_m,d,d,d)$和$(c_m',d,d,d)$。 
 
 现在查询$Q=\Pi_{C_{1}, \ldots, C_{m}}\left(R_{1} \bowtie \ldots \bowtie R_{m}\right)$。查询结果中恰好包含$(c_1, \dots, c_m)$和$(c_1, \dots, c_m')$两个tuples。不难看出，只有让原3-SAT实例成立的那组$x_i$的取值才会使得$(c_1, \dots, c_m)$出现在view中，反之亦然。
 
@@ -189,11 +189,19 @@ SP查询就是选择原关系中的特定行和列。显然，要删除这类查
 
 通过上述过程还可以得到推论：对于任意tuple $t\in Q(S)$，判断source中的某一tuple $t'$是否在$t$的witness路径中也是NP难的。进一步地，判断source中的某一标记是否会在output中出现也是NP难的。
 
-##### SJU查询
-
 ##### SPU查询
 
+对于SP查询view中的某一位置，source显然有唯一的side-effect-free的标记位置。对于SPU查询，分别考虑每个SP子查询，然后并起来即可。这是P的算法。
 
+##### SJU查询
+
+对于SJ查询，只需在目标location的tuple的witness路径上找到side-effcet最小的tuple即可。加上union操作后，还需统计对其他子查询造成的side-effect，取总和最小的那一个即可。这也是P的算法。
+
+### 两个问题之间的联系
+
+都是在「溯源」。deletion也可以理解为打在tuple上的annotation。
+
+deletion问题是以tuple作为基本元素进行溯源，而annotation问题的基本元素是location。
 
 ## 参考资料
 
