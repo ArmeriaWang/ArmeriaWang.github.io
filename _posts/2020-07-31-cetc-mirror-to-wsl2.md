@@ -31,7 +31,7 @@ Microsoft Store中安装Windows Terminal，用它操作Ubuntu。
 
 [WSL 2迁移步骤](https://www.jskap.com/notes/how-to-move-wsl2-disto/)
 
-注意，无论下载的`LxRunOffline`是新版还是旧版，都一定要按照旧版方式的操作：先转成WSL 1，然后再迁移，最后转回WSL 2。直接以WSL 2迁移可能会失败。
+注意，无论下载的`LxRunOffline`是新版还是旧版，都一定要按照旧版的方式操作：先转成WSL 1，然后再迁移，最后转回WSL 2。直接以WSL 2迁移可能会失败。
 
 *可选*：在VS Code中安装插件`Remote - WSL`，然后点击左下角的`><`图标，随便在WSL中打开一个文件夹，等待连接完成。连接完成后，就能在WSL中用`code`命令打开文件了。不过`code`不能`sudo`，需要管理员权限的地方还是要`vim`。
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: harvard-justice-note8
+title: harvard-justice-note10
 postTitle: 正义之辩——随录（十）
 categories: [Justice, Philosophy, Open Class Notes]
 description: 哈佛大学《正义之辩》课堂随录（十）
