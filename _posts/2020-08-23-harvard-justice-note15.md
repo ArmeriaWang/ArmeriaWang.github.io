@@ -1,9 +1,9 @@
 ---
 layout: post
-title: harvard-justice-note13
+title: harvard-justice-note15
 postTitle: 正义之辩——随录（十五）
 categories: [Justice, Philosophy, Open Class Notes]
-description: 哈佛大学《正义之辩》课堂随录（十五``）
+description: 哈佛大学《正义之辩》课堂随录（十五）
 keywords: Harvard, Justice, Philosophy, Political Philosophy, Open Class Notes
 published: true
 mathjax: false
