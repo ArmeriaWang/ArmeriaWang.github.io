@@ -77,3 +77,8 @@ typora-root-url: ..
 
 所以我还没有推完。据说《快乐王子》这个童话的隐喻贯穿了游戏始终。而且还有两部Wilde的戏剧没有读。所以目前写得比较乱，标题也没有拟好。推完、读完之后再回来更。
 
+## 参考资料
+
+- [THE HAPPY PRINCE](http://pinkmonkey.com/dl/library1/happy.pdf)
+
+- [快乐王子](https://www.kanunu8.com/book4/10141/225347.html)
