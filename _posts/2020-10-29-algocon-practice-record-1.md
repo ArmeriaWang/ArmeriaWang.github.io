@@ -16,9 +16,11 @@ typora-root-url: ..
 [题目链接](https://vjudge.net/problem/Gym-102769J)
 
 一个长度为$n\ (n\le 3\times 10^5)$的小写字母串，切$\left\lfloor\frac{n}{d}\right\rfloor$刀，得到$\left\lfloor\frac{n}{d}\right\rfloor$个长度为$d$的子串（若$d$不整除$n$，还需要剩下连续的一段$n\bmod d$长的）。现在把长度为$d$的这$\left\lfloor\frac{n}{d}\right\rfloor$段按任意顺序排成一个宽度$d$的矩形。记宽度为$d$的矩形数为$\text{ans}_d$，求
+
 $$
 (\sum_{d=1}^{n} \text{ans}_d) \bmod 998244353
 $$
+
 #### 做法
 
 哈希 + 动态维护。
@@ -200,9 +202,13 @@ int main()
 [题目链接](https://vjudge.net/problem/Gym-102769H)
 
 序列$\{a_1,a_2,\dots,a_n\}$合法当且仅当$1\le a_i\le n$且$\max\{a_1,a_2,\dots,a_i\}−\max\{a_1,a_2,\dots,a_{i-1}\}\le 1$，$a_1=1$。记长度为$n$的所有合法序列的集合为$S_n$。给定$n\ (n \le 3000)$，要求
+
 $$
+
 \sum_{t=1}^{n}\sum_{p \in S_{n}} \operatorname{cnt}(p, t)^{2},
+
 $$
+
 其中$\operatorname{cnt}(p, t)$表示数字$t$在序列$p$中出现的次数。答案要模上输入值。
 
 #### 做法
@@ -675,7 +681,7 @@ int main()
 
 [题目链接](https://vjudge.net/problem/计蒜客-42388/origin)
 
-给定一张$$n\ (1 \leq n \leq 25000)$$个点$m\ (1\le m\le 10^5)$条边混合图，其中负权边只会出现在有向边上。此外，对于任一有向边$(u,v)$，从$v$出发是不能返回$u$的。求满足上述性质的图的单源最短路。
+给定一张$n\ (1 \leq n \leq 25000)$个点$m\ (1\le m\le 10^5)$条边混合图，其中负权边只会出现在有向边上。此外，对于任一有向边$(u,v)$，从$v$出发是不能返回$u$的。求满足上述性质的图的单源最短路。
 
 #### 做法
 
