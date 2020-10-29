@@ -195,6 +195,203 @@ int main()
 
 计算几何题。题解[见此](http://armeria.wang/2020/10/25/gym-102770h/)。
 
+### 【CCPC2020 秦皇岛】 Gym 102769H - Holy Sequence
+
+[题目链接](https://vjudge.net/problem/Gym-102769H)
+
+序列$\{a_1,a_2,\dots,a_n\}$合法当且仅当$1\le a_i\le n$且$\max\{a_1,a_2,\dots,a_i\}−\max\{a_1,a_2,\dots,a_{i-1}\}\le 1$，$a_1=1$。记长度为$n$的所有合法序列的集合为$S_n$。给定$n\ (n \le 3000)$，要求
+$$
+\sum_{t=1}^{n}\sum_{p \in S_{n}} \operatorname{cnt}(p, t)^{2},
+$$
+其中$\operatorname{cnt}(p, t)$表示数字$t$在序列$p$中出现的次数。答案要模上输入值。
+
+#### 做法
+
+不妨考虑**数字$t$第一次出现位置为$x$**的那些序列所贡献的答案，不妨设之为$h[t][x]$。再设$f[i][j]$为长度为$i$、最大值为$j$的合法序列数。在$x$之前的$x-1$个位置上（即前缀$\{a_1,\dots,a_{x-1}\}$），合法序列数就是$f[x-1][t-1]$。注意前$x-1$项是不能填$t$的，只有后面$n-x + 1$项（即后缀$\{a_x,\dots,a_n\}$）能填$t$。前后两部分是独立的，所以根据乘法原理，$h[t][x]$就等于后缀$x$贡献的答案乘上$f[x-1][t-1]$。
+
+那么，后缀$x$的答案应该如何计算呢？这里平方的处理思想非常巧妙和重要：做组合意义的转化。$\operatorname{cnt}(p, t)^{2}$就相当于在$p$的所有$t$的出现中，选择两个的方案数（可以重复选同一个）。例如，设$p=\{1, 1, 2, 3, 2, 4, 2\}$，$t=2$，则从$p$的所有$3$次$t$的出现中选出$2$个的方案数就是$\operatorname{cnt}(p, t)^{2}=9$。
+
+有了这个组合意义，就可以DP后缀$x$的答案了。设$d[i][j][0/1/2]$为长度为$i$、最大值为$j$、已经选择指定数字$0/1/2$次的方案数（因为指定数字一定在$[1,j]$范围内，且都是等价的，所以不必指明是哪一个）。之所以要这么设计状态数组，是因为这样一来$d$的计算与所选择数字$t$就是无关的。换句话说，我们可以事先预处理$d$数组；对于每个数字$t$，我们都能重复利用它。
+
+$d$的转移也是十分自然的，分类讨论即可。考虑如下的记忆化搜索：
+
+```python
+# 对t=0，考虑第i位的填法和选法
+d[i][j][0] -> d[i + 1][j + 1][0]        # 填j+1
+d[i][j][0] -> d[i + 1][j][0] * (j - 1)  # 填1~j中的一个数（非指定数）
+d[i][j][0] -> d[i + 1][j][0]            # 填指定数，但不选
+d[i][j][0] -> d[i + 1][j][1] * 2        # 填指定数，只选一次
+d[i][j][0] -> d[i + 1][j][2]            # 填指定数，选两次
+```
+
+时间复杂度就是$O(n^2)$的。如下的代码就是用这个思路写的：
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+
+#define rep(i, a, b) for (int i = a; i <= b; i++)
+#define dep(i, a, b) for (int i = a; i >= b; i--)
+#define fill(a, x) memset(a, x, sizeof(a))
+#define pb push_back
+#define mp make_pair
+
+typedef int ll;
+
+const int N = 3000 + 5;
+
+ll d[N][N][3], f[N][N], res[N], mod;
+int T, n;
+
+inline void mod_add(ll &res, ll x) {
+    while (res >= mod) res -= mod;
+    while (x >= mod) x -= mod;
+    res += x;
+    while (res >= mod) res -= mod;
+}
+
+// 还需要决策pos个位置, 已填的最大数是max_num, 需要选指定数k=0/1/2次
+inline ll dp(int pos, int max_num, int k) {
+    ll &cur = d[pos][max_num][k];
+    if (cur != -1) return cur;
+    if (pos <= 0) {
+        if (k == 0) return cur = 1;
+        return cur = 0;
+    }
+    cur = 0;
+    if (k == 2) {
+        mod_add(cur, dp(pos - 1, max_num + 1, 2));
+        mod_add(cur, (1LL * dp(pos - 1, max_num, 2) * (max_num - 1)) % mod);
+        mod_add(cur, dp(pos - 1, max_num, 2));
+        mod_add(cur, dp(pos - 1, max_num, 1) * 2);
+        mod_add(cur, dp(pos - 1, max_num, 0));
+    }
+    else if (k == 1) {
+        mod_add(cur, dp(pos - 1, max_num + 1, 1));
+        mod_add(cur, (1LL * dp(pos - 1, max_num, 1) * (max_num - 1)) % mod);
+        mod_add(cur, dp(pos - 1, max_num, 1));
+        mod_add(cur, dp(pos - 1, max_num, 0));
+    }
+    else {  // k = 0
+        mod_add(cur, dp(pos - 1, max_num + 1, 0));
+        mod_add(cur, (1LL * dp(pos - 1, max_num, 0) * max_num) % mod);
+    }
+    return cur;
+}
+
+int main()
+{
+    #ifndef ONLINE_JUDGE
+        freopen("h.in", "r", stdin);
+    #endif
+
+    int kase = 0;
+    scanf("%d", &T);
+    while (T--) {
+        scanf("%d%d", &n, &mod);
+        rep(i, 0, n) {
+            res[i] = 0;
+            rep(j, 0, n) {
+                f[i][j] = 0;
+                d[i][j][0] = d[i][j][1] = d[i][j][2] = -1;
+            }
+        }
+        rep(i, 1, n) dp(n, i, 2); 
+        f[0][0] = 1;
+        rep(i, 1, n) rep(j, 1, i) 
+            mod_add(f[i][j], (1LL * f[i - 1][j] * j + f[i - 1][j - 1]) % mod);
+        rep(i, 1, n)  // num
+            rep(j, i, n) {  // start pos of 2nd part
+                ll tmp = d[n - j][i][0];
+                mod_add(tmp, d[n - j][i][1] * 2);
+                mod_add(tmp, d[n - j][i][2]);
+                mod_add(res[i], (1LL * f[j - 1][i - 1] * tmp) % mod);
+        }
+        printf("Case #%d:\n", ++kase);
+        rep(i, 1, n - 1) printf("%d ", res[i]);
+        printf("%d\n", res[n]);
+    }
+    return 0;
+}
+```
+
+但由于记忆化搜索太慢，尽管我各种卡常，这代码最后还是TLE。（也许把记忆化改成手写栈能过，没试。）
+
+还有另一种更高效的递推做法，但比较难想。我们先不看式子里的平方，假设要求的是
+$$
+\sum_{t=1}^{n}\sum_{p \in S_{n}} \operatorname{cnt}(p, t).
+$$
+仍然考虑数字$t$第一次出现位置为$x$的序列数。设合法前缀数为$f[i][j]$（长度为$i$，最大值为$j$），合法后缀数为$g[i][j]$（长度为$i$，以数字$j$开头），则合法序列数为$f[x-1][t-1]\times g[n-x+1][t]$。
+
+接下来考虑怎么利用$g$数组计算我们想要的答案。还是分类讨论：
+
+- 选两次$a[x]$。对答案贡献就是$g[n-x+1][t]$
+- 选一次$a[x]$，选一次后面的$t$。这需要保证后面还有至少一个$t$。其实可以这么想：我们空出一个位置出来，让一个$t$随意插入。这样，方案数就是$2\times g[n-x][t]\times (n - x)$。
+
+- 选两个相同的$t$，但不是$a[x]$。思考方式同上，方案数是$g[n-x][t]\times (n - x)$。
+- 选两个不同的$t$，但都不是$a[x]$。这时需要空出两个位置，方案数为$g[n-x-1][t]\times(n-x-1)\times(n-x)$。
+
+最后一个小问题是$g[i][j]$如何计算。考虑从后往前填数，第$i$步填上的第$1$位根据定义就是$j$：
+
+- 如果第$2$位填$[1,j]$之间的数，那么方案数就是$g[i-1][j]\times j$（这是因为我们要的是第$3$位及之后的变化，无论第$2$位是$[1,j]$的哪一个数，这个变化数都是相同的）
+- 如果第$2$位填$j+1$，方案数就是$g[i - 1][j + 1]$。
+
+因此有递推式$g[i][j] = g[i-1][j]\times j + g[i-1][j+1]$。
+
+代码如下：
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+#define rep(i, a, b) for (int i = a; i <= b; i++)
+#define dep(i, a, b) for (int i = a; i >= b; i--)
+#define vep(i, v) for (int i = 0; i < (int)v.size(); i++)
+#define fill(a, x) memset(a, x, sizeof(a))
+#define mp make_pair
+#define pb push_back
+
+typedef long long ll;
+
+const int N = 3000 + 5;
+
+int T, n;
+ll mod;
+ll f[N][N], g[N][N], ans[N];
+
+int main()
+{
+    int kase = 0;
+    scanf("%d", &T);
+    while (T--) {
+        scanf("%d%lld", &n, &mod);
+        f[0][0] = 1;
+        rep(i, 1, n) rep(j, 1, i) 
+            f[i][j] = (f[i - 1][j] * j + f[i - 1][j - 1]) % mod;
+        rep(i, 1, n) g[1][i] = 1;
+        rep(i, 2, n) rep(j, 1, n - i + 1)
+            g[i][j] = (g[i - 1][j] * j + g[i - 1][j + 1]) % mod;
+        rep(i, 1, n) {
+            ans[i] = 0;
+            rep(j, i, n) {
+                ll tmp = g[n - j + 1][i];
+                if (j < n) tmp = (tmp + 3 * g[n - j][i] * (n - j)) % mod;
+                if (j < n - 1) tmp = (tmp + g[n - j - 1][i] * (n - j - 1) % mod * (n - j)) % mod;
+                ans[i] = (ans[i] + f[j - 1][i - 1] * tmp) % mod;
+            }
+        }
+        printf("Case #%d:\n", ++kase);
+        rep(i, 1, n - 1) printf("%lld ", ans[i]);
+        printf("%lld\n", ans[n]);
+    }
+    return 0;
+}
+```
+
+
+
 ### 【ICPC2019 香港】Gym 102452C - Constructing Ranches
 
 [题目链接](https://vjudge.net/problem/Gym-102452C)
@@ -473,41 +670,6 @@ int main()
 
 }
 ```
-
-### 【CCPC2020 秦皇岛】 Gym 102769H - Holy Sequence
-
-[题目链接](https://vjudge.net/problem/Gym-102769H)
-
-序列$\{a_1,a_2,\dots,a_n\}$合法当且仅当$1\le a_i\le n$且$\max\{a_1,a_2,\dots,a_i\}−\max\{a_1,a_2,\dots,a_{i-1}\}\le 1$，$a_1=1$。记长度为$n$的所有合法序列的集合为$S_n$。给定$n\ (n \le 3000)$，要求
-$$
-\sum_{t=1}^{n}\sum_{p \in S_{n}} \operatorname{cnt}(p, t)^{2},
-$$
-其中$\operatorname{cnt}(p, t)$表示数字$t$在序列$p$中出现的次数。
-
-#### 做法
-
-我们先不看式子里的平方，假设要求的是
-$$
-\sum_{t=1}^{n}\sum_{p \in S_{n}} \operatorname{cnt}(p, t).
-$$
-不妨考虑**数字$t$第一次出现位置为$x$**的那些序列所贡献的答案，不妨设之为$h[t][x]$。再设$f[i][j]$为长度为$i$、最大值为$j$的合法序列数。在$x$之前的$x-1$个位置上（即前缀$\{a_1,\dots,a_{x-1}\}$），合法序列数就是$f[x-1][t-1]$。注意前$x-1$项是不能填$t$的，只有后面$n-x + 1$项（即后缀$\{a_x,\dots,a_n\}$）能填$t$。前后两部分是独立的，所以根据乘法原理，$h[t][x]$就等于后缀$x$贡献的答案乘上$f[x-1][t-1]$。
-
-那么，后缀$x$的答案应该如何计算呢？这里平方的处理思想非常巧妙和重要：做组合意义的转化。$\operatorname{cnt}(p, t)^{2}$就相当于在$p$的所有$t$的出现中，选择两个的方案数（可以重复选同一个）。例如，设$p=\{1, 1, 2, 3, 2, 4, 2\}$，$t=2$，则从$p$的所有$3$次$t$的出现中选出$2$个的方案数就是$\operatorname{cnt}(p, t)^{2}=9$。
-
-有了这个组合意义，就可以DP后缀$x$的答案了。设$d[i][j][0/1/2]$为长度为$i$、最大值为$j$、已经选择指定数字$0/1/2$次的方案数（指定数字一定在$[1,j]$范围内，且都是等价的，不必指明是哪一个）。之所以要这么设计状态数组，是因为这样一来$d$的计算与所选择数字$t$就是无关的。换句话说，对于每个数字$t$，我们都能重复利用$d$数组。
-
-$d$的转移也是十分自然的，分类讨论即可。考虑如下的记忆化搜索：
-
-```python
-# 对t=0，考虑第i位的填法和选法
-d[i][j][0] -> d[i + 1][j + 1][0]        # 填j+1
-d[i][j][0] -> d[i + 1][j][0] * (j - 1)  # 填1~j中的一个数（非指定数）
-d[i][j][0] -> d[i + 1][j][0]            # 填指定数，但不选
-d[i][j][0] -> d[i + 1][j][1] * 2        # 填指定数，只选一次
-d[i][j][0] -> d[i + 1][j][2]            # 填指定数，选两次
-```
-
-
 
 ### 【ICPC2019 银川】计蒜客 42388 - Delivery Route
 
